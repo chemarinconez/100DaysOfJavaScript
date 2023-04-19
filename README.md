@@ -7,3 +7,6 @@ I use this course as reference: https://www.udemy.com/course/the-complete-javasc
 
 ### DAY 1
 I learned about the DOM basic with a project as example. I added some code from me using what I understood and the refactored it a little bit.
+
+### DAY 2
+Today I've been learning more about the DOM with another interesting project. In this case I worked with classes (adding and removing them), learning more about the eventListener (today about keypress event).
