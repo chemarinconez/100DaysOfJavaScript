@@ -17,3 +17,7 @@ Today I've been learning more about the DOM with another interesting project. In
 ### DAY 3
 
 Today I started a project following along the course to reinforce what I've been learning about the DOM.
+
+### Day 4
+
+Praticing about "event listener" with the Pig-Game Project. A bit tired for my day job, but on my way.
