@@ -26,3 +26,7 @@ Praticing about "event listener" with the Pig-Game Project. A bit tired for my d
 
 Today I finish my 3rd small project learning more about the DOM and I knew more class properties to make my program more insteresting.
 I am ready to create my own small projects with everything I've learned about Javascript so far.
+
+### Day 6
+
+Learning concepts such as JavaScript Engine and Runtime to understand how this high level programming language works behind the scenes.
