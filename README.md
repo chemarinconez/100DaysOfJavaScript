@@ -6,27 +6,27 @@ _I started a couple of weeks ago with JavaScript Fundamentals (data types, opera
 
 I use this course as reference: https://www.udemy.com/course/the-complete-javascript-course/
 
-### DAY 1
+### Day 6
 
-I learned about the DOM basic with a project as example. I added some code from me using what I understood and the refactored it a little bit.
-
-### DAY 2
-
-Today I've been learning more about the DOM with another interesting project. In this case I worked with classes (adding and removing them), learning more about the eventListener (today about keypress event).
-
-### DAY 3
-
-Today I started a project following along the course to reinforce what I've been learning about the DOM.
-
-### Day 4
-
-Praticing about "event listener" with the Pig-Game Project. A bit tired for my day job, but on my way.
+Learning concepts such as JavaScript Engine and Runtime to understand how this high level programming language works behind the scenes.
 
 ### Day 5
 
 Today I finish my 3rd small project learning more about the DOM and I knew more class properties to make my program more insteresting.
 I am ready to create my own small projects with everything I've learned about Javascript so far.
 
-### Day 6
+### Day 4
 
-Learning concepts such as JavaScript Engine and Runtime to understand how this high level programming language works behind the scenes.
+Praticing about "event listener" with the Pig-Game Project. A bit tired for my day job, but on my way.
+
+### DAY 3
+
+Today I started a project following along the course to reinforce what I've been learning about the DOM.
+
+### DAY 2
+
+Today I've been learning more about the DOM with another interesting project. In this case I worked with classes (adding and removing them), learning more about the eventListener (today about keypress event).
+
+### DAY 1
+
+I learned about the DOM basic with a project as example. I added some code from me using what I understood and the refactored it a little bit.
