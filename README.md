@@ -5,6 +5,9 @@ _This is a challenge I made to motivate myself to learn Vanilla JavaScript._
 _I started a couple of weeks ago with JavaScript Fundamentals (data types, operators, structures of control, and the basic of functions, arrays and objects). I didn't record that, but I'll do it from the DOM._
 
 I use this course as reference: https://www.udemy.com/course/the-complete-javascript-course/
+### Day 8
+
+Understanding concepts like Scope and Scoping Chain, vs Call Stack.
 
 ### Day 7
 
