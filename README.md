@@ -6,6 +6,10 @@ _I started a couple of weeks ago with JavaScript Fundamentals (data types, opera
 
 I use this course as reference: https://www.udemy.com/course/the-complete-javascript-course/
 
+### Day 7
+
+Learning more concepts about Execution Context and the Call Stack to understand better how JS works. I HAVE TO COME BACK HERE IN A FUTURE SEVERAL TIMES UNTILL FULLY UNDERSTAND THIS CONCEPTS.
+
 ### Day 6
 
 Learning concepts such as JavaScript Engine and Runtime to understand how this high level programming language works behind the scenes.
