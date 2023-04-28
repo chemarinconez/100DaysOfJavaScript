@@ -6,6 +6,10 @@ _I started a couple of weeks ago with JavaScript Fundamentals (data types, opera
 
 I use this course as reference: https://www.udemy.com/course/the-complete-javascript-course/
 
+### Day 10
+
+Theory and Practice of Hoisting and TDZ (Temporal Dead Zone).
+
 ### Day 9
 
 Scoping in practice, writing code to understand better how the different scopes work.

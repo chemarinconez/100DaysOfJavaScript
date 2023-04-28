@@ -10,7 +10,7 @@ function calcAge (birthYear) {
 const firstName = 'Jose'; // Global  (In the global scope)
 calcAge(1994); // At this poing the firstName variable is already in the global execution environment so It'll be logged to the console
 
-*/
+
 
 function calcAge (birthYear) {
     const age = 2023 - birthYear;
@@ -58,3 +58,48 @@ calcAge(1994);
 // printAge(); // It'll appear tha printAge is not defined (ReferenceError), because this function works as a variable inside of the other function not accessible to the global scope.
 
 // console.log(millenial); // Not accessible from here because is function scope
+
+*/
+// HOISTING AND TDZ
+
+// VARIABLES
+console.log(me); // undefined
+// console.log(job);
+// console.log(birthYear);
+
+var me = 'Jose';
+let job = 'Student'; // The TDZ (Temporal Dead Zone) of this variable is from the begging of the code until this line where it was declared.
+const year = 1994;
+
+// FUNCTIONS
+console.log(addDecl(2, 3)); // We can call it before it was declared
+// console.log(addExpr(2, 3)); // Uncaught ReferenceError: Cannot access 'addExpr' before initialization.
+// console.log(addArrow(2, 3)); // Uncaught ReferenceError: Cannot access 'addArrow' before initialization.
+// console.log(addExprVar(2, 3)); // caught TypeError: addExprVar is not a function
+// console.log(addArrowVar(2, 3)); // caught TypeError: addArrowVar is not a function
+
+function addDecl (a, b) {
+    return a + b;
+}
+
+const addExpr = function (a, b) {
+    return a + b;
+}
+
+const addArrow = (a, b) => a + b;
+
+
+// var addExprVar = function (a, b) {
+//     return a + b;
+// }
+
+// var addArrowVar = (a, b) => a + b;
+
+// Example
+if (!numProducts) deleteShoppingCart(); // All products deleted! because undefined = false
+
+var numProducts = 10;
+
+function deleteShoppingCart() {
+    console.log('All products deleted!');
+}
