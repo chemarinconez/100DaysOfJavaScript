@@ -59,7 +59,7 @@ calcAge(1994);
 
 // console.log(millenial); // Not accessible from here because is function scope
 
-*/
+
 // HOISTING AND TDZ
 
 // VARIABLES
@@ -103,3 +103,170 @@ var numProducts = 10;
 function deleteShoppingCart() {
     console.log('All products deleted!');
 }
+
+
+
+// The THIS keyword
+
+console.log(this); // output the window (Global Object)
+
+const calcAge = function(birthYear) {
+    console.log(2037 - birthYear);
+    console.log(this); // undefined because we are in 'strict mode'. If not it'll point to the Global Object
+}
+
+calcAge(1991);
+
+const calcAgeArrow = birthYear => {
+    console.log(2037 - birthYear);
+    console.log(this); // It'll point to the Global Object 
+}
+
+calcAgeArrow(1991);
+
+const jose = {
+    birthYear: 1994,
+    calcAge () {
+        console.log(this); // It will output the 'jose' object. Because it's the method calling it
+        console.log(2023 - this.birthYear);
+    }
+}
+jose.calcAge();
+
+const paula = {
+    birthYear: 1997
+
+}
+
+paula.calcAge = jose.calcAge; // copying the calcAge() method from jose to paula (method borrowing). We copy the method without calling it ()
+
+paula.calcAge(); // the same method will point to the 'paula' object because even though it belong to 'jose' object in this case is 'paula' who is calling it.
+
+// The THIS keyword is very dynamic
+
+const f = jose.calcAge; // we copy the method without calling it ()
+
+f(); // The result will be undefined as the first global functions, because 'this' keyword in regular functions points to undefined
+
+
+// --------------------------------------------------------
+
+// var firstName = 'Paula';
+
+const jose = {
+    firstName: 'Jose',
+    birthYear: 1994,
+    calcAge () {
+        console.log(this); // It will output the 'jose' object. Because it's the method calling it
+        console.log(2023 - this.birthYear);
+    }, 
+
+    greet: () => console.log(`Hey ${this.firstName}`),
+};
+
+jose.greet(); // it will output 'Hey undefined'. Because the this keyword in an arrow function points to the global object (window) and there is no any global variable firstName which was created (var firstName).
+
+// --------------------------------------------------------
+
+
+
+
+const jose = {
+    firstName: 'Jose',
+    birthYear: 1994,
+    calcAge () {
+        console.log(this); 
+        console.log(2023 - this.birthYear);
+
+        const isMillenial = function () {
+            console.log(this.birthYear >= 1981 && this.birthYear <= 1996);
+        }
+        isMillenial(); // It's a regular function so the 'this' keyword will be undefined. Then if we call it it'll throw an Uncaught TypeError
+    }, 
+
+    greet: () => {
+        console.log(this);
+        console.log(`Hey ${this.firstName}`)
+    },
+};
+
+jose.greet();
+jose.calcAge();
+
+// --------------------------------------------------------
+
+// OLDER SOLUCION TO THE Uncaught TypeError
+const jose = {
+    firstName: 'Jose',
+    birthYear: 1994,
+    calcAge () {
+        console.log(this); 
+        console.log(2023 - this.birthYear);
+
+        const self = this; // here we still can access to the 'this' variable, so using the 'self' we can save the value and use it later on the regular function inside of the method.  It can be 'self' or 'that'.
+        const isMillenial = function () {
+            console.log(self); // JS goes up (scope chain) into the parent scope to look for the variable
+            console.log(self.birthYear >= 1981 && self.birthYear <= 1996);
+        }
+        isMillenial();
+    }, 
+
+    greet: () => {
+        console.log(this);
+        console.log(`Hey ${this.firstName}`)
+    },
+};
+
+jose.greet();
+jose.calcAge();
+
+
+
+// --------------------------------------------------------
+
+// NEWER SOLUCION TO THE Uncaught TypeError
+const jose = {
+    firstName: 'Jose',
+    birthYear: 1994,
+    calcAge () {
+        console.log(this); 
+        console.log(2023 - this.birthYear);
+
+        
+        // Remember an arrow function does not have its own 'this' keyword but its parent's one ( calcAge() )  so we can use it and keep the 'this' keyword on the code.
+        const isMillenial = () => {
+            console.log(this); 
+            console.log(this.birthYear >= 1981 && this.birthYear <= 1996);
+        }
+        isMillenial();
+    }, 
+
+    greet: () => {
+        console.log(this);
+        console.log(`Hey ${this.firstName}`)
+    },
+};
+
+jose.greet();
+jose.calcAge();
+
+// --------------------------------------------------------
+*/
+
+// 'arguments' keyword (only available to regular functions): Can be useful when we want a function to accept more parrameters than what we actually especify.
+
+const addExpr = function (a, b) {
+    console.log(arguments);
+    return a + b;
+};
+
+addExpr(2, 5);
+addExpr(2, 5, 8, 12); // thanks to the 'arguments' keyword we can add them but the sum won't happen.
+
+
+var addArrow = (a, b) => {
+    console.log(arguments);
+    return a + b
+};
+
+// addArrow(2, 5, 8); // it will lead to a 'caught ReferenceError'

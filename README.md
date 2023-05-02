@@ -6,6 +6,10 @@ _I started a couple of weeks ago with JavaScript Fundamentals (data types, opera
 
 I use this course as reference: https://www.udemy.com/course/the-complete-javascript-course/
 
+### Day 11
+
+Learning about the this weyword, how dynamic this variable is and the different values it can take. I also  learned about the 'this' keyword, the values it can take depending on where is called from, how can we use it throughout the different sort od functions, and more.
+
 ### Day 10
 
 Theory and Practice of Hoisting and TDZ (Temporal Dead Zone).
