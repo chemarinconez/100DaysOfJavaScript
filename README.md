@@ -8,7 +8,7 @@ I use this course as reference: https://www.udemy.com/course/the-complete-javasc
 
 ### Day 11
 
-Learning about the this weyword, how dynamic this variable is and the different values it can take. I also  learned about the 'this' keyword, the values it can take depending on where is called from, how can we use it throughout the different sort od functions, and more.
+Learning about the this keyword, how dynamic this variable is and the different values it can take. I also  learned about the values that the 'this' keyword can take depending on where is called from, how can we use it throughout the different sort od functions, and more.
 
 ### Day 10
 
