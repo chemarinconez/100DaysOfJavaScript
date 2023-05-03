@@ -6,6 +6,12 @@ _I started a couple of weeks ago with JavaScript Fundamentals (data types, opera
 
 I use this course as reference: https://www.udemy.com/course/the-complete-javascript-course/
 
+### Day 12
+
+Understanding better how primitive and reference types work behind the scenes, how the call stack and the heap temporary store this values temporarily. Also how to create shallow copies of our objects with the 'Object.assign({}, objectToCopy1, objectToCopy2, ..., objectToCopyN)' method. 
+
+I am ready to create some small projects in order to gather some concepts I've learned so far. I think it is the best way to keep this in my long-term memory.
+
 ### Day 11
 
 Learning about the this keyword, how dynamic this variable is and the different values it can take. I also  learned about the values that the 'this' keyword can take depending on where is called from, how can we use it throughout the different sort od functions, and more.

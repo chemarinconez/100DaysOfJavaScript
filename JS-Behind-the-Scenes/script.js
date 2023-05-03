@@ -251,7 +251,7 @@ jose.greet();
 jose.calcAge();
 
 // --------------------------------------------------------
-*/
+
 
 // 'arguments' keyword (only available to regular functions): Can be useful when we want a function to accept more parrameters than what we actually especify.
 
@@ -270,3 +270,49 @@ var addArrow = (a, b) => {
 };
 
 // addArrow(2, 5, 8); // it will lead to a 'caught ReferenceError'
+
+*/
+
+//-------------------------------------------------
+// MUTATING PRIMITIVE TYPES (created in the call stack)
+let joseLastName = 'Rinconez';
+let paulaLastName = joseLastName; //Create a new variable in the Call Stack pointing to the same memory address (with the same value) as the 'joseLastName' variable.
+joseLastName = 'Ramirez'; //'joseLastName' variable now point to a differente address with another value
+console.log(joseLastName, paulaLastName);
+
+
+// MUTATING TYPE REFERENCE (created in the heap)
+const paula = {
+    firstName: 'Paula',
+    lastName: 'Ramirez', 
+    age: 26,
+};
+const marriedPaula = paula; // 'marriedPaula' is a variable in the stack, and it points to the same address (in the call stack)  as the 'paula' variable, this address comes from the heap and hold the object.
+marriedPaula['lastName'] = 'Rinconez'; // we modified the object in the heap, so any variable pointing to this reference will show the same changes.
+console.log('Before marriage:', paula);
+console.log('After marriage:', marriedPaula);
+
+// marriedPaula = {}; // This will lead to an error because this is a constant and '{}' is an empty object with a different position in memory
+
+// COPYING OBJECTS
+
+const paulaSingle = {
+    firstName: 'Paula',
+    lastName: 'Ramirez', 
+    age: 26,
+    family: ['Virginia', 'Raul', 'Jessica'],
+};
+
+const paulaMarried = Object.assign({}, paulaSingle); // Creates another object which is a real copy of the original on a different memory address in the heap
+
+// I can copy as many objects as I want to, with this Object assign method Object.assign({}, firstObject, secondObject, ...nObject, {property1: value1, property2: value2})
+
+// The downside is that the Object.assign({}, copyFromOject) only works on the first level, if we have an object inside an object, this inner object will still be the same (same place in memory). So it only creates a shallow copy. That's why the family array inside of the paulaSingle object won't change
+
+paulaMarried.lastName = 'Rinconez'; // only modifies the copy but no the original
+// paulaMarried.family[1] = 'Alqui'; // this will change also the original inner array (which is also an object, remember), so it won't be a total copy.
+
+// We can do a deep copy using an external library, for example Lo-Dash
+console.log('Before marriage:', paulaSingle);
+console.log('After marriage:', paulaMarried);
+
