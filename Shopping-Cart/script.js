@@ -33,8 +33,8 @@ const product1 = {
 
 nameOfProductEl.textContent = product1.nameOfProduct;
 descriptionEl.textContent = product1.description;
-referenceEl.textContent = product1.referenceNumber;
-priceEl.textContent = product1.priceEl;
+referenceEl.textContent += product1.referenceNumber;
+priceEl.textContent = product1.value;
 availableEl.textContent = product1.available === true ? 'In Stock' : 'Sold out';
 
 const product2 = {
