@@ -32,7 +32,7 @@ h1 {
 }
 
 .container {
-    width: 80vw;
+    max-width: 370px;
     margin: 0 auto;   
 }
 
