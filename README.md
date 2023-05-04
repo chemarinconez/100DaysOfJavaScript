@@ -6,6 +6,10 @@ _I started a couple of weeks ago with JavaScript Fundamentals (data types, opera
 
 I use this course as reference: https://www.udemy.com/course/the-complete-javascript-course/
 
+### Day 13
+
+Today I have started one small project (Shopping Cart) to put in the reps the knowledge I've adquired so far.
+
 ### Day 12
 
 Understanding better how primitive and reference types work behind the scenes, how the call stack and the heap temporary store this values temporarily. Also how to create shallow copies of our objects with the 'Object.assign({}, objectToCopy1, objectToCopy2, ..., objectToCopyN)' method. 
