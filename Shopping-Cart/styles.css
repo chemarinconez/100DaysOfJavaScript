@@ -7,13 +7,18 @@ body {
     margin: 0;
 }
 
+.top {
+    background-color: #0e4242;
+    height: 10px;
+}
+
 .nav-bar {
     max-width: 100%;
     background: linear-gradient(to bottom, #0e4242 , 85%, #d8ede7);
     /* background-color: #0e4242; */
     display: flex;
     justify-content: space-between;
-    padding: 20px 55px;
+    padding: 10px 55px 15px;
     font-size: 25px;
     /* position: relative; */
     position: sticky;

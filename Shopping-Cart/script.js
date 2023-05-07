@@ -1,18 +1,5 @@
 'use strict';
 
-/*
-// PRODUCT TEMPLATE
-12 products (3 x 4 on big screem)
-const product = {
-    nameOfProduct: ' ',
-    referenceNumber: 000+(3digists)
-    description:
-    value:
-    discount: `x%/100`, 
-    available: true,
-}
-*/
-
 // DECLARING VARIABLES TO WORK WITH THE DOM (El = Element)
 let nameOfProductEl = document.querySelector('.name-product');
 let descriptionEl = document.querySelector('.description');
@@ -212,25 +199,27 @@ loadingInfoProduct();
 // referenceEl.textContent += product1.referenceNumber;
 // priceEl.textContent = product1.value;
 // availableEl.textContent = product1.available === true ? 'In Stock' : 'Sold out';
-
 for (let i = 1; i <= 12; i++) {
     let addItem = document.querySelector(`.product-${i}`).children[6];
 
     addItem.addEventListener('click', () => {
-        if (!cart.includes(products[i-1])) {
-            products[i-1].amountInCart += 1;
-            cart.push(products[i-1]);
-        } else {
-            products[i-1].amountInCart += 1;
+        if (products[i-1].available()) {
+            if (!cart.includes(products[i-1])) {
+                products[i-1].amountInCart += 1;
+                cart.push(products[i-1]);
+            } else {
+                products[i-1].amountInCart += 1;
+            }
+            
+            total +=products[i-1].value;
+            totalInCart += 1;
+            totalProductsEl.textContent = totalInCart;
+            totalProductsEl.classList.remove('hidden');
+            console.log(cart);
+            console.log(total);
+            products[i-1].amount -= 1;
+            loadingInfoProduct();
         }
         
-        total +=products[i-1].value;
-        totalInCart += 1;
-        totalProductsEl.textContent = totalInCart;
-        totalProductsEl.classList.remove('hidden');
-        console.log(cart);
-        console.log(total);
-        products[i-1].amount -= 1;
-        loadingInfoProduct();
     })
 }
