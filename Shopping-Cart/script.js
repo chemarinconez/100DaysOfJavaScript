@@ -276,4 +276,13 @@ closeCartBtn.addEventListener('click', closeCart);
 overlayEl.addEventListener('click', closeCart);
 buyBtn.addEventListener('click', closeCart);
 
+document.addEventListener('keydown', function (e) {
+    //console.log('A key was pressed');
+    // console.log(e.key); // Shows an object called 'KeyboardEvent' where you get information about the key was pressed.
+  
+    if (e.key === "Escape" && !cartEl.classList.contains('hidden')) {
+      closeCart(); // in this case I do have to call this function because when the program reaches this line and if it's true, something needs to happen.
+    }
+  })
+
 console.log(cart);
