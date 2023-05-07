@@ -6,6 +6,12 @@ _I started a couple of weeks ago with JavaScript Fundamentals (data types, opera
 
 I use this course as reference: https://www.udemy.com/course/the-complete-javascript-course/
 
+### Days 14 - 17
+
+Small but good E-commerce project where I put on practice everything I've learned so far. There is a small bug, but as soon as I find how to fix it I'll be better. The web runs well, the bug is minimun. 
+Concepts: Data types, Functions, If Statements, For Loops, DOM, Event Listeners, and more! 
+I also had the opportunity of improving my HTML and CSS skills a bit.  
+
 ### Day 13
 
 Today I have started one small project (Shopping Cart) to put in the reps the knowledge I've adquired so far.
