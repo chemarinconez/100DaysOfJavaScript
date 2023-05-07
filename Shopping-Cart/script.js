@@ -8,6 +8,13 @@ let priceEl = document.querySelector('.price');
 let availableEl = document.querySelector('.available');
 const addProductEl = document.querySelector('.add-product');
 const totalProductsEl = document.querySelector('.total-products');
+const linkCartEl = document.querySelector('.link-cart');
+const cartEl = document.querySelector('.cart');
+const overlayEl = document.querySelector('.overlay');
+const tableEl = document.querySelector('.table-1');
+const totalValueEl = document.querySelector('.total-value');
+const closeCartBtn = document.querySelector('.close-cart');
+const buyBtn = document.querySelector('.buy-btn');
 
 // CREATING THE PRODUCTS
 
@@ -172,6 +179,7 @@ const products = [product1, product2, product3, product4, product5, product6,  p
 // Creating the Shopping Cart (Initialized as an empty Array)
 
 const cart = [];
+// cart = [product1, product2];
 let total = 0;
 let totalInCart = 0;
 //console.log(document.querySelector('.product-1'));
@@ -199,6 +207,29 @@ loadingInfoProduct();
 // referenceEl.textContent += product1.referenceNumber;
 // priceEl.textContent = product1.value;
 // availableEl.textContent = product1.available === true ? 'In Stock' : 'Sold out';
+
+const showItemsCart = () => {
+    for (let item of cart) {
+        let productName = document.createElement('p');
+        let productPrice = document.createElement('p');
+        let productAmount = document.createElement('p');
+        let productTotal = document.createElement('p');
+        let nameTextNode = document.createTextNode(item.nameOfProduct);
+        let priceTextNode = document.createTextNode(item.value);
+        let amountTextNode = document.createTextNode(item.amountInCart);
+        let totalTextNode = document.createTextNode(`${item.amountInCart * item.value}`);
+        productName.appendChild(nameTextNode);
+        productPrice.appendChild(priceTextNode);
+        productAmount.appendChild(amountTextNode);
+        productTotal.appendChild(totalTextNode);
+        tableEl.appendChild(productName);
+        tableEl.appendChild(productPrice);
+        tableEl.appendChild(productAmount);
+        tableEl.appendChild(productTotal);
+    }
+}
+
+
 for (let i = 1; i <= 12; i++) {
     let addItem = document.querySelector(`.product-${i}`).children[6];
 
@@ -219,7 +250,30 @@ for (let i = 1; i <= 12; i++) {
             console.log(total);
             products[i-1].amount -= 1;
             loadingInfoProduct();
+            
         }
         
     })
 }
+
+
+
+const openCart = () => {
+    cartEl.classList.remove('hidden');
+    overlayEl.classList.remove('hidden');
+    totalValueEl.textContent = total;
+    showItemsCart();
+}
+
+const closeCart = () => {
+    cartEl.classList.add('hidden');
+    overlayEl.classList.add('hidden');
+}
+
+linkCartEl.addEventListener('click', openCart);
+
+closeCartBtn.addEventListener('click', closeCart);
+overlayEl.addEventListener('click', closeCart);
+buyBtn.addEventListener('click', closeCart);
+
+console.log(cart);
