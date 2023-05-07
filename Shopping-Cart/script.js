@@ -19,144 +19,206 @@ let descriptionEl = document.querySelector('.description');
 let referenceEl = document.querySelector('.reference');
 let priceEl = document.querySelector('.price');
 let availableEl = document.querySelector('.available');
+const addProductEl = document.querySelector('.add-product');
+const totalProductsEl = document.querySelector('.total-products');
 
 // CREATING THE PRODUCTS
 
 const product1 = {
-    nameOfProduct: "Laptop Asus Vivobook",
-    referenceNumber: '000123',
+    nameOfProduct: "Laptop 1",
+    referenceNumber: 'Ref: 000123',
     description: `14" Laptop, Asus, SSD 256GB, RAM 16GB, IntelCore i7 3500Hz`, 
     value: 1250,
     amount: 2,
-    available: this.amount > 0 ? 'In Stock' : 'Sold Out',
+    image: 'image-1.jpg',
+    available () {
+        return this.amount > 0 ? true : false
+    }
 }
 
 const product2 = {
     nameOfProduct: "Laptop 2",
-    referenceNumber: '000124',
+    referenceNumber: 'Ref: 000124',
     description: `14" Laptop, Asus, SSD 256GB, RAM 16GB, IntelCore i7 3500Hz`, 
-    value: 1250,
+    value: 1200,
     amount: 2,
-    available: this.amount > 0 ? 'In Stock' : 'Sold Out',
+    image: 'image-2.jpg',
+    available () {
+        return this.amount > 0 ? true : false
+    }
 }
 
 const product3 = {
     nameOfProduct: "Laptop 3",
-    referenceNumber: '000125',
+    referenceNumber: 'Ref: 000125',
     description: `14" Laptop, Asus, SSD 256GB, RAM 16GB, IntelCore i7 3500Hz`, 
-    value: 1250,
+    value: 1150,
     amount: 2,
-    available: this.amount > 0 ? 'In Stock' : 'Sold Out',
+    image: 'image-3.jpg',
+    available () {
+        return this.amount > 0 ? true : false
+    }
 }
 
 const product4 = {
     nameOfProduct: "Laptop 4",
-    referenceNumber: '000126',
+    referenceNumber: 'Ref: 000126',
     description: `14" Laptop, Asus, SSD 256GB, RAM 16GB, IntelCore i7 3500Hz`, 
-    value: 1250,
+    value: 1100,
     amount: 2,
-    available: this.amount > 0 ? 'In Stock' : 'Sold Out',
+    image: 'image-4.jpg',
+    available () {
+        return this.amount > 0 ? true : false
+    }
 }
 
 const product5 = {
     nameOfProduct: "Laptop 5",
-    referenceNumber: '000127',
+    referenceNumber: 'Ref: 000127',
     description: `14" Laptop, Asus, SSD 256GB, RAM 16GB, IntelCore i7 3500Hz`, 
-    value: 1250,
+    value: 1245,
     amount: 2,
-    available: this.amount > 0 ? 'In Stock' : 'Sold Out',
+    image: 'image-5.jpg',
+    available () {
+        return this.amount > 0 ? true : false
+    }
 }
 
 const product6 = {
     nameOfProduct: "Laptop 6",
-    referenceNumber: '000128',
+    referenceNumber: 'Ref: 000128',
     description: `14" Laptop, Asus, SSD 256GB, RAM 16GB, IntelCore i7 3500Hz`, 
-    value: 1250,
+    value: 1240,
     amount: 2,
-    available: this.amount > 0 ? 'In Stock' : 'Sold Out',
+    image: 'image-6.jpg',
+    available () {
+        return this.amount > 0 ? true : false
+    }
 }
 
 const product7 = {
     nameOfProduct: "Laptop 7",
-    referenceNumber: '000129',
+    referenceNumber: 'Ref: 000129',
     description: `14" Laptop, Asus, SSD 256GB, RAM 16GB, IntelCore i7 3500Hz`, 
-    value: 1250,
+    value: 1300,
     amount: 2,
-    available: this.amount > 0 ? 'In Stock' : 'Sold Out',
+    image: 'image-7.jpg',
+    available () {
+        return this.amount > 0 ? true : false
+    }
 }
 
 const product8 = {
     nameOfProduct: "Laptop 8",
-    referenceNumber: '000130',
+    referenceNumber: 'Ref: 000130',
     description: `14" Laptop, Asus, SSD 256GB, RAM 16GB, IntelCore i7 3500Hz`, 
-    value: 1250,
+    value: 1155,
     amount: 2,
-    available: this.amount > 0 ? 'In Stock' : 'Sold Out',
+    image: 'image-8.jpg',
+    available () {
+        return this.amount > 0 ? true : false
+    }
 }
 
 const product9 = {
     nameOfProduct: "Laptop 9",
-    referenceNumber: '000131',
+    referenceNumber: 'Ref: 000131',
     description: `14" Laptop, Asus, SSD 256GB, RAM 16GB, IntelCore i7 3500Hz`, 
-    value: 1250,
+    value: 1450,
     amount: 2,
-    available: this.amount > 0 ? 'In Stock' : 'Sold Out',
+    image: 'image-9.jpg',
+    available () {
+        return this.amount > 0 ? true : false
+    }
 }
 
 const product10 = {
     nameOfProduct: "Laptop 10",
-    referenceNumber: '000132',
+    referenceNumber: 'Ref: 000132',
     description: `14" Laptop, Asus, SSD 256GB, RAM 16GB, IntelCore i7 3500Hz`, 
-    value: 1250,
+    value: 1420,
     amount: 2,
-    available: this.amount > 0 ? 'In Stock' : 'Sold Out',
+    image: 'image-10.jpg',
+    available () {
+        return this.amount > 0 ? true : false
+    }
 }
 
 const product11 = {
     nameOfProduct: "Laptop 11",
-    referenceNumber: '000133',
+    referenceNumber: 'Ref: 000133',
     description: `14" Laptop, Asus, SSD 256GB, RAM 16GB, IntelCore i7 3500Hz`, 
-    value: 1250,
+    value: 1425,
     amount: 2,
-    available: this.amount > 0 ? 'In Stock' : 'Sold Out',
+    image: 'image-11.jpg',
+    available () {
+        return this.amount > 0 ? true : false
+    }
 }
 
 const product12 = {
     nameOfProduct: "Laptop 12",
-    referenceNumber: '000134',
+    referenceNumber: 'Ref: 000134',
     description: `14" Laptop, Asus, SSD 256GB, RAM 16GB, IntelCore i7 3500Hz`, 
-    value: 1250,
+    value: 1430,
     amount: 2,
-    available: this.amount > 0 ? 'In Stock' : 'Sold Out',
+    image: 'image-12.jpg',
+    available () {
+        return this.amount > 0 ? true : false
+    }
 }
 
 const products = [product1, product2, product3, product4, product5, product6,  product7, product8, product9, product10, product11, product12 ];
 
+// Creating the Shopping Cart (Initialized as an empty Array)
+
+const cart = [];
+let total = 0;
+let totalInCart = 0;
 //console.log(document.querySelector('.product-1'));
 
 //console.log(document.querySelector(`.product-1`).children[1].textContent = product1.nameOfProduct);
 
-for (let i = 1; i <= 12; i++) {
-    // Add children[0] and change the images
-    document.querySelector(`.product-${i}`).children[1]. textContent = products[i-1].nameOfProduct;
-    document.querySelector(`.product-${i}`).children[2]. textContent = products[i-1].description;
-    document.querySelector(`.product-${i}`).children[3]. textContent += products[i-1].referenceNumber;
-    document.querySelector(`.product-${i}`).children[4]. textContent = products[i-1].value;
-    document.querySelector(`.product-${i}`).children[5]. textContent = products[i-1].available;
+const loadingInfoProduct = () => {
+    for (let i = 1; i <= 12; i++) {
+        // Add children[0] and change the images
+        document.querySelector(`.product-${i}`).children[0]. src = `img/${products[i-1].image}`;
+        document.querySelector(`.product-${i}`).children[1]. textContent = products[i-1].nameOfProduct;
+        document.querySelector(`.product-${i}`).children[2]. textContent = products[i-1].description;
+        document.querySelector(`.product-${i}`).children[3]. textContent = products[i-1].referenceNumber;
+        document.querySelector(`.product-${i}`).children[4]. textContent = products[i-1].value;
+        document.querySelector(`.product-${i}`).children[5]. textContent = products[i-1].available() === true ? 'In Stock' : 'Sold out';
+    }
 }
 
+loadingInfoProduct();
 
-// for (let i = 1; i <= 12; i++) {
-//     document.querySelector(`product-${i}`).children[1] = products[i-1].nameOfProduct;
-// }
 
+//console.log(product1.available());
 // nameOfProductEl.textContent = product1.nameOfProduct;
 // descriptionEl.textContent = product1.description;
 // referenceEl.textContent += product1.referenceNumber;
 // priceEl.textContent = product1.value;
 // availableEl.textContent = product1.available === true ? 'In Stock' : 'Sold out';
 
+for (let i = 1; i <= 12; i++) {
+    document.querySelector(`.product-${i}`).children[6].addEventListener('click', () => {
+        cart.push(products[i-1]);
+        total +=products[i-1].value;
+        totalInCart += 1;
+        totalProductsEl.textContent = totalInCart;
+        totalProductsEl.classList.remove('hidden');
+        console.log(cart);
+        console.log(total);
+        products[i-1].amount -= 1;
+        loadingInfoProduct();
+    })
+}
 
-// Creating the Shopping Cart (Initialized as an empty Array)
 
-//const cart = [];
+/*
+for (let i = 1; i <= 12; i++) {
+    document.querySelector(`.product-${i}`).children[7].addEventListener('click', () => {
+        cart.push("Product added");
+    })
+}*/
