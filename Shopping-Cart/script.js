@@ -30,6 +30,7 @@ const product1 = {
     description: `14" Laptop, Asus, SSD 256GB, RAM 16GB, IntelCore i7 3500Hz`, 
     value: 1250,
     amount: 2,
+    amountInCart: 0,
     image: 'image-1.jpg',
     available () {
         return this.amount > 0 ? true : false
@@ -42,6 +43,7 @@ const product2 = {
     description: `14" Laptop, Asus, SSD 256GB, RAM 16GB, IntelCore i7 3500Hz`, 
     value: 1200,
     amount: 2,
+    amountInCart: 0,
     image: 'image-2.jpg',
     available () {
         return this.amount > 0 ? true : false
@@ -54,6 +56,7 @@ const product3 = {
     description: `14" Laptop, Asus, SSD 256GB, RAM 16GB, IntelCore i7 3500Hz`, 
     value: 1150,
     amount: 2,
+    amountInCart: 0,
     image: 'image-3.jpg',
     available () {
         return this.amount > 0 ? true : false
@@ -66,6 +69,7 @@ const product4 = {
     description: `14" Laptop, Asus, SSD 256GB, RAM 16GB, IntelCore i7 3500Hz`, 
     value: 1100,
     amount: 2,
+    amountInCart: 0,
     image: 'image-4.jpg',
     available () {
         return this.amount > 0 ? true : false
@@ -78,6 +82,7 @@ const product5 = {
     description: `14" Laptop, Asus, SSD 256GB, RAM 16GB, IntelCore i7 3500Hz`, 
     value: 1245,
     amount: 2,
+    amountInCart: 0,
     image: 'image-5.jpg',
     available () {
         return this.amount > 0 ? true : false
@@ -90,6 +95,7 @@ const product6 = {
     description: `14" Laptop, Asus, SSD 256GB, RAM 16GB, IntelCore i7 3500Hz`, 
     value: 1240,
     amount: 2,
+    amountInCart: 0,
     image: 'image-6.jpg',
     available () {
         return this.amount > 0 ? true : false
@@ -102,6 +108,7 @@ const product7 = {
     description: `14" Laptop, Asus, SSD 256GB, RAM 16GB, IntelCore i7 3500Hz`, 
     value: 1300,
     amount: 2,
+    amountInCart: 0,
     image: 'image-7.jpg',
     available () {
         return this.amount > 0 ? true : false
@@ -114,6 +121,7 @@ const product8 = {
     description: `14" Laptop, Asus, SSD 256GB, RAM 16GB, IntelCore i7 3500Hz`, 
     value: 1155,
     amount: 2,
+    amountInCart: 0,
     image: 'image-8.jpg',
     available () {
         return this.amount > 0 ? true : false
@@ -126,6 +134,7 @@ const product9 = {
     description: `14" Laptop, Asus, SSD 256GB, RAM 16GB, IntelCore i7 3500Hz`, 
     value: 1450,
     amount: 2,
+    amountInCart: 0,
     image: 'image-9.jpg',
     available () {
         return this.amount > 0 ? true : false
@@ -138,6 +147,7 @@ const product10 = {
     description: `14" Laptop, Asus, SSD 256GB, RAM 16GB, IntelCore i7 3500Hz`, 
     value: 1420,
     amount: 2,
+    amountInCart: 0,
     image: 'image-10.jpg',
     available () {
         return this.amount > 0 ? true : false
@@ -150,6 +160,7 @@ const product11 = {
     description: `14" Laptop, Asus, SSD 256GB, RAM 16GB, IntelCore i7 3500Hz`, 
     value: 1425,
     amount: 2,
+    amountInCart: 0,
     image: 'image-11.jpg',
     available () {
         return this.amount > 0 ? true : false
@@ -162,6 +173,7 @@ const product12 = {
     description: `14" Laptop, Asus, SSD 256GB, RAM 16GB, IntelCore i7 3500Hz`, 
     value: 1430,
     amount: 2,
+    amountInCart: 0,
     image: 'image-12.jpg',
     available () {
         return this.amount > 0 ? true : false
@@ -202,8 +214,16 @@ loadingInfoProduct();
 // availableEl.textContent = product1.available === true ? 'In Stock' : 'Sold out';
 
 for (let i = 1; i <= 12; i++) {
-    document.querySelector(`.product-${i}`).children[6].addEventListener('click', () => {
-        cart.push(products[i-1]);
+    let addItem = document.querySelector(`.product-${i}`).children[6];
+
+    addItem.addEventListener('click', () => {
+        if (!cart.includes(products[i-1])) {
+            products[i-1].amountInCart += 1;
+            cart.push(products[i-1]);
+        } else {
+            products[i-1].amountInCart += 1;
+        }
+        
         total +=products[i-1].value;
         totalInCart += 1;
         totalProductsEl.textContent = totalInCart;
@@ -214,11 +234,3 @@ for (let i = 1; i <= 12; i++) {
         loadingInfoProduct();
     })
 }
-
-
-/*
-for (let i = 1; i <= 12; i++) {
-    document.querySelector(`.product-${i}`).children[7].addEventListener('click', () => {
-        cart.push("Product added");
-    })
-}*/
