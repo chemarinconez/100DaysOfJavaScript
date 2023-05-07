@@ -29,13 +29,16 @@ body {
     width: 50px;
     height: 35px;
     border-radius: 5px;
-    background-color: #338c8c;
+    background: radial-gradient(#338c8c 40%, #0e4242 80%);
+    /* background-color: #338c8c; */
     padding: 2px;
     position: relative;
 }
 
 .link-cart:hover {
-    background-color: #a8e3e3;
+    background: radial-gradient(#338c8c 50%, #0e4242 85%);
+    /* background: radial-gradient(#0e4242 50%,#338c8c 80%); */
+    /* background-color: #a8e3e3; */
 }
 
 .shopping-cart {
