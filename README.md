@@ -6,6 +6,11 @@ _I started a couple of weeks ago with JavaScript Fundamentals (data types, opera
 
 I use this course as reference: https://www.udemy.com/course/the-complete-javascript-course/
 
+### Days 18
+
+Learning about destructuring. Destructuring arrays and objects, why we use this and some advices.
+
+
 ### Days 14 - 17
 
 Small but good E-commerce project where I put on practice everything I've learned so far. There is a small bug, but as soon as I find how to fix it I'll be better. The web runs well, the bug is minimun. 
