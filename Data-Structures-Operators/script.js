@@ -37,8 +37,56 @@ const restaurant = {
       close: 24,
     },
   },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`);
+  },
+
+  orderPizza (mainIngredients, ...otherIngredients) {
+    console.log(mainIngredients);
+    console.log(otherIngredients);
+  }
+
 };
 
+// REST PATTERN AND PARAMETERS
+
+// 1. REST PATTERN IN DESTRUCTURING 
+// SPREAD, because on Right side of =
+const arr = [1, 2, ...[3, 4]]
+
+// REST, because on left side of =
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+// The REST PATTERN basically collects the elements that are unused in the destructuring assignment
+
+// We can use the REST and the SPREAD together
+const [pizza, , risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(pizza, risotto, otherFood);
+// Ther rest element (pattern) always mush be the last in the destructuring assigment. Only must be one rest in every destructuring assignment
+
+// Objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
+
+// 2. REST PATTERN IN FUNCTIONS
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i< numbers.length; i++) sum += numbers[i];
+
+  console.log(sum);
+}
+
+add(2, 3);
+add(5, 3, 7, 2);
+add(8, 2, 5, 3, 2, 1, 4);
+
+const array1 = [23, 5, 7];
+add(...array1);
+
+
+restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
+/*
 restaurant.orderDelivery({
   time: '22:30',
   address: 'Via del Sole, 21',
@@ -50,6 +98,43 @@ restaurant.orderDelivery({
   address: 'Via del Sole, 21',
   starterIndex: 0,
 });
+
+// THE SPREAD OPERATOR
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr);
+// with the spread operator
+const newArr = [1, 2, ...arr];
+console.log(newArr);
+console.log(...newArr);
+
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+console.log(newMenu);
+
+// Copy array
+const mainMenuCopy = [...restaurant.mainMenu];
+console.log(mainMenuCopy);
+
+// Join 2 arrays
+const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(menu);
+
+// const ingredients = [prompt("Let's make pasta! Ingredient 1?"), prompt("Ingredient 2?"), prompt("Ingredient 3?")];
+
+// restaurant.orderPasta(...ingredients);
+
+
+// SPREAD OPERATOR IN OBJECTS
+const newRestaurant = {foundedIn: 1994, ...restaurant, founder: "Jose Rinconez"};
+console.log(newRestaurant);
+
+const restaurantCopy = {...restaurant};
+restaurantCopy.name = 'Ristorante Roma';
+console.log(restaurantCopy.name);
+console.log(restaurant.name);
+
+
+// DESTRUCTURING OBJECTS
 
 const {name, openingHours, categories} = restaurant;
 console.log(name, openingHours, categories);
@@ -67,7 +152,9 @@ console.log(menu, starters); // [] ['Focaccia', 'Bruschetta', 'Garlic Bread', 'C
 
 const { fri: { open, close } } = openingHours;
 console.log(open, close);
-/*
+
+
+// DESTRUCTURING ARRAYS
 const arr = [2, 3, 4];
 const [a, b, c] = arr;
 console.log(a, b, c);

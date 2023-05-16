@@ -307,7 +307,7 @@ const paulaMarried = Object.assign({}, paulaSingle); // Creates another object w
 
 // I can copy as many objects as I want to, with this Object assign method Object.assign({}, firstObject, secondObject, ...nObject, {property1: value1, property2: value2})
 
-// The downside is that the Object.assign({}, copyFromOject) only works on the first level, if we have an object inside an object, this inner object will still be the same (same place in memory). So it only creates a shallow copy. That's why the family array inside of the paulaSingle object won't change
+// The downside is that the Object.assign({}, copyFromObject) only works on the first level, if we have an object inside an object, this inner object will still be the same (same place in memory). So it only creates a shallow copy. That's why the family array inside of the paulaSingle object won't change
 
 paulaMarried.lastName = 'Rinconez'; // only modifies the copy but no the original
 // paulaMarried.family[1] = 'Alqui'; // this will change also the original inner array (which is also an object, remember), so it won't be a total copy.
