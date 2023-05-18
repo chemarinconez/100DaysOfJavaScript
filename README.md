@@ -6,11 +6,15 @@ _I started a couple of weeks ago with JavaScript Fundamentals (data types, opera
 
 I use this course as reference: https://www.udemy.com/course/the-complete-javascript-course/
 
-### Days 19
+### Day 20
+
+Learned about Short Circuiting (&& and ||), and about the Nullish Coalescing Operator (??). I also learned about the Logical assignment operator and made a Challenge gathering from destructuring until these topics.
+
+### Day 19
 
 Learning about spread operator and rest pattern/parameter. How these work in a different way (opposite way), and how Javascript recognize which one you are calling depends where you use it.
 
-### Days 18
+### Day 18
 
 Learning about destructuring. Destructuring arrays and objects, why we use this and some advices.
 

@@ -49,6 +49,95 @@ const restaurant = {
 
 };
 
+// LOGICAL ASSIGNMENT OPERATORS
+const rest1 = {
+  name: 'Capri',
+  numGuests: 0,
+}
+
+const rest2 = {
+  name: 'La Piazza',
+  owner: 'Giovanni Rossi',
+}
+
+
+
+/*
+// rest1.numGuests = rest1.numGuests || 10; // 10 because 0 is a falsy value
+// rest2.numGuests = rest2.numGuests || 10;
+console.log(rest1);
+// console.log(rest2);
+
+// OR Assignment operator
+rest2.numGuests ||= 10; // rest2.numGuests = rest2.numGuests || 10;
+console.log(rest2);
+
+
+// Logical nullish assignment operator (??)
+
+rest1.numGuests ??= 10; //rest1.numGuests = rest1.numGuests ?? 10;
+console.log(rest1);
+
+// rest2.owner = rest2.owner && '<ANONYMOUS>';
+// console.log(rest2);
+
+// rest1.owner = rest1.owner && '<ANONYMOUS>';
+// console.log(rest1); //rest1.owner = undefined
+
+
+// AND (&&) assignment operator
+rest2.owner &&= '<ANONYMOUS>';
+console.log(rest2);
+
+rest1.owner &&= '<ANONYMOUS>';
+console.log(rest1); // owner property doesn't appear
+
+
+
+// NULLISH COALESCING OPERATOR (??)
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10;
+console.log(guests);
+
+//Fixing this
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
+
+
+// SHOR CIRCUITING (&& AND ||)
+
+console.log('------OR------');
+// Logical operators can use ANY data type, return ANY data type, and do short-circuiting
+console.log(3 || 'Jose');
+console.log('' || 'Jose'); // there's not short-circuiting
+console.log(true || 0);
+console.log(undefined || null); // there's not short-circuiting
+
+// restaurant.numGuests = 23;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+const guests2 = restaurant.numGuests || 10; // Better option than above one
+console.log(guests2);
+
+// None of these options (above) are good ideas if restaurant.numGuests = 0, because 0 is a falsy value
+
+console.log('------AND------');
+
+console.log(0 && 'Jose');
+console.log(7 && 'Jose');
+console.log('Hello' && 23 && null && 'Jose');
+
+// PRACTICAL EXAMPLE
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+// Alternative with the && operator
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+
+// || does short-circuiting with the first truthy value and && with the first falsy value. Otherwise returns the last option.
+
+
 // REST PATTERN AND PARAMETERS
 
 // 1. REST PATTERN IN DESTRUCTURING 
@@ -77,6 +166,9 @@ const add = function (...numbers) {
   console.log(sum);
 }
 
+
+
+
 add(2, 3);
 add(5, 3, 7, 2);
 add(8, 2, 5, 3, 2, 1, 4);
@@ -86,7 +178,7 @@ add(...array1);
 
 
 restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
-/*
+
 restaurant.orderDelivery({
   time: '22:30',
   address: 'Via del Sole, 21',
