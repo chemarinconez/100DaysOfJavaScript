@@ -6,6 +6,10 @@ _I started a couple of weeks ago with JavaScript Fundamentals (data types, opera
 
 I use this course as reference: https://www.udemy.com/course/the-complete-javascript-course/
 
+### Day 21
+
+I learned about looping Arrays and Objects with the for-of loop and some topics of ES6+ such as Enhanced Object Literals and Optional Chaining (?.).
+
 ### Day 20
 
 Learned about Short Circuiting (&& and ||), and about the Nullish Coalescing Operator (??). I also learned about the Logical assignment operator and made a Challenge gathering from destructuring until these topics.
