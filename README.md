@@ -8,7 +8,7 @@ I use this course as reference: https://www.udemy.com/course/the-complete-javasc
 
 ### Day 21
 
-I learned about looping Arrays and Objects with the for-of loop and some topics of ES6+ such as Enhanced Object Literals and Optional Chaining (?.).
+I learned about looping Arrays and Objects with the for-of loop and some topics of ES6+ such as Enhanced Object Literals and Optional Chaining (?.). DAY 21-2 : Challenge completed.
 
 ### Day 20
 
