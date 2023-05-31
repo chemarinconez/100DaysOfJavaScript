@@ -53,6 +53,133 @@ const restaurant = {
 
 };
 
+// MAPS
+
+const rest = new Map();
+//Adding elements
+rest.set('name', 'Classico Italiano');
+rest.set(1, 'Firenze, Italy');
+console.log(rest.set(2, 'Lisbon, Portugal')); // Return the updated map
+
+// We can chain the 'set()' method:
+rest.set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic']).set('open', 11).set('close', 23).set(true, 'We are open :D').set(false, 'We are closed :(');
+
+//Getting elements
+console.log(rest.get('name'));
+console.log(rest.get(true));
+console.log(rest.get(1));
+
+const time = 21;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+// SOME METHODS TO WORK WITH MAPS
+
+// Checking if an element is in the map
+console.log(rest.has('categories'));
+
+// Delete from the map
+rest.delete(2);
+console.log(rest);
+
+// Know the size
+console.log(rest.size);
+
+// Remove all the elements (clear) of the map
+rest.clear();
+console.log(rest);
+
+// We can use arrays or objects as map keys
+
+const arr = [1, 2];
+// rest.set([1, 2], 'Test'); //This will has problem when call it
+// console.log(rest.get([1, 2])); // Undefined
+rest.set(arr, 'Test');
+console.log(rest.get(arr));
+
+rest.set(document.querySelector('h1'), 'Heading');
+console.log(rest);
+
+// Filling a map without the 'set()' method:
+const question = new Map([
+  ['question', 'What is the best programming language in the world?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+  ['correct', 3],
+  [true, 'Correct 🎉'],
+  [false, 'Try again!'],
+]);
+
+console.log(question);
+
+// Convert Object to Maps ('openingHours' Object to Map):
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+// Iterating Maps
+console.log(question.get('question'));
+
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+
+// const answer = Number(prompt(question.get('question')));
+const answer = 3;
+console.log(answer);
+
+console.log(question.get(answer === question.get('correct')));
+
+
+// Convert Map to array
+console.log(question);
+console.log([...question]);
+
+// console.log([...question.entries()]);
+console.log([...question.keys()]);
+console.log([...question.values()]);
+console.log([...Object.entries(restaurant.openingHours)]);
+
+/*
+// SETS
+const ordersSet = new Set(['Pasta', 'Pizza', 'Pizza', 'Risotto', 'Pasta', 'Pizza']);
+
+console.log(ordersSet);
+
+console.log(new Set('Jose'));
+
+// size of Set
+console.log(ordersSet.size);
+
+// Checking if one element is in the Set
+console.log(ordersSet.has('Pizza'));
+console.log(ordersSet.has('Bread'));
+
+// Adding new elements to a set
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread');
+console.log(ordersSet);
+
+// Deleting elements
+ordersSet.delete('Pizza');
+console.log(ordersSet);
+
+// Emptying the Set
+// ordersSet.clear();
+// console.log(ordersSet);
+
+// Looping Sets
+for (const order of ordersSet) console.log(order);
+
+// Removing duplicated values from 'staff' array
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+
+let staffUnique = new Set(staff);
+// converting 'staffUnique' from set to array
+console.log(staffUnique);
+staffUnique = [...new Set(staff)];
+
+console.log(staffUnique);
+
 // LOOPING OBJECTS
 
 // Property names (keys)
@@ -84,7 +211,6 @@ for ( const [ day, {open: o, close: c} ] of entries ) {
   console.log(`On ${day} we open at ${o} and close at ${c}`);
 }
 
-/*
 // OPTIONAL CHAINING(?.)
 
 // WITHOUT Optional Chaining
@@ -238,7 +364,7 @@ console.log(a, b, others);
 // We can use the REST and the SPREAD together
 const [pizza, , risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
 console.log(pizza, risotto, otherFood);
-// Ther rest element (pattern) always mush be the last in the destructuring assigment. Only must be one rest in every destructuring assignment
+// Ther rest element (pattern) always must be the last in the destructuring assigment. Only must be one rest in every destructuring assignment
 
 // Objects
 const { sat, ...weekdays } = restaurant.openingHours;

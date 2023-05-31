@@ -6,6 +6,10 @@ _I started a couple of weeks ago with JavaScript Fundamentals (data types, opera
 
 I use this course as reference: https://www.udemy.com/course/the-complete-javascript-course/
 
+### Day 22
+
+I learned about Set and Map (iterables) and how to work with them. I also resolved the challenge.
+
 ### Day 21
 
 I learned about looping Arrays and Objects with the for-of loop and some topics of ES6+ such as Enhanced Object Literals and Optional Chaining (?.). DAY 21-2 : Challenge completed.
